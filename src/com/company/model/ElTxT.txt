@@ -1,0 +1,45 @@
+Class Micro:
+private int N asientos;
+private int M espacioParados;
+private int sentados;
+private int parados;
+private int volumen;
+private int lugaresLibres();
+private boolean hayLugar();
+private boolean estaVacio();
+private Empleado primeroEnSubir();
+
+Class Empleado:
+private Personalidad personalidad
+private Empleado jefe;
+private boolean quiereSubir(){
+return personalidad.puedeSubir();
+}
+void subir();
+void bajar();
+
+interface Personalidad:
+boolean puedeSubir(Empleado empleado, Micro micro);
+
+Class Apurado:
+boolean puedeSubir(Empleado empleado, Micro micro){
+	return true;
+}
+Class Claustrofobico:
+boolean puedeSubir(Empleado empleado, Micro micro){
+	return micro.getVolumen() > 120;
+}
+Class Fiaca:
+boolean puedeSubir(Empleado empleado, Micro micro){
+	return micro.getAsientos > micro.getSentados;
+}
+Class Moderado:
+private int minimoLugaresLibresAceptables;
+boolean puedeSubir(Empleado empleado, Micro micro){
+	return minimoLugaresLibresAceptables > micro.lugaresLibres();
+}
+Class Obsecuente:
+boolean puedeSubir(Empleado empleado, Micro micro){
+	return empleado.getJefe.quiereSubir();
+}
+
