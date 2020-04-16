@@ -56,12 +56,8 @@ public class Empleado {
     }
 
     public boolean quiereSubir(Micro micro){
-        return personalidad.puedeSubir(micro, this) && this.getMicro() == null;
-    }
-
-    public void subir(){
-    }
-    public void bajar(){
+        return personalidad.puedeSubir(micro, this)
+                //&& this.getMicro() == null;
     }
 
     @Override
